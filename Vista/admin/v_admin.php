@@ -38,7 +38,7 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Configuración</a>
-                    <a class="dropdown-item" href="../../Controlador/c_logout.php">Cerrar sesión</a>
+                    <a class="dropdown-item" href="../../controlador/c_logout.php">Cerrar sesión</a>
                 </div>
             </li>
         </ul>
@@ -53,6 +53,7 @@
               <div class="card-body">
                 <h4 class="card-title">Gestion de Usuarios</h4>
                 <p class="card-text">Gestion de Usuarios...</p>
+                <a href="v_reporteUsuario.php">Generar Reporte</a>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>
@@ -73,6 +74,7 @@
               <div class="card-body">
                 <h4 class="card-title">Gestion de Cotizaciones</h4>
                 <p class="card-text">Gestion de Cotizaciones...</p>
+                <a href="v_graficos.php">Ver estadisticas</a>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
             </div>

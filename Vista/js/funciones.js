@@ -56,7 +56,7 @@ function saveUser(){
     .done(function(resultado){
         try{
             const result = JSON.parse(resultado);
-            if(result['estado']==="exito"){
+            if(result['estado']==="exito" ){
                 $("#resultado").removeClass("alert-danger");
                 $("#resultado").addClass("alert-success");
                 $("#resultado").show();
@@ -75,6 +75,40 @@ function saveUser(){
         }
     });
 }
+
+function guardarVentayCompra(){
+
+    var registro2= $("#formVentayCompra").serialize();
+    console.log('Datos serializados: '+ registro2);
+
+    if (validarCampoVacio($("#monto").val().length ,'Debe ingresar un monto ')) {
+        return false;
+    }
+
+    if (validarCampoVacio($("#fecha").val().length ,'Por favor ingrese una fecha')) {
+        return false;
+    }
+    
+    if (validarCampoVacio($("#tTransaccion").val().length ,'Por favor ingrese el tipo de la transaccion')) {
+        return false;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: "../../controlador/c_guardarVentaYCompras.php",
+        data: registro2
+    })
+    .done(function(resultado){
+        Swal.fire({
+            icon: 'warning',
+            title:'Oops',
+            text: resultado
+          }).then((result) => {
+            location.reload();
+          });
+    });
+}
+
 
 
 function validarCampoVacio(longitudCampo,mensaje) {
@@ -132,13 +166,13 @@ function login(){
         this.resultado=parseInt(resultado);
         switch(this.resultado){
             case 1:
-                window.location="../Vista/admin/v_admin.php";
+                window.location="../vista/admin/v_admin.php";
                 break;
             case 2:
                 window.location="../pendiente.php";
                 break;
             case 3:
-                window.location="../Vista/cliente/v_cliente.php";
+                window.location="../vista/cliente/v_cliente.php";
                 break;
             default:
                 $("#resultadoLogin").show();

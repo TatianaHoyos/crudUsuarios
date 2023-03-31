@@ -1,5 +1,5 @@
 <?php
-include_once "../Modelo/conexion.php";
+include_once "../modelo/conexion.php";
 
 $respuesta = new stdClass();
 $respuesta->estado = '';

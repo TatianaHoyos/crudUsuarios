@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-include_once "../Modelo/conexion.php";
+include_once "../modelo/conexion.php";
 
 if(isset($_POST['operacion']) && $_POST['operacion'] == "login"){
     $usuario=$_POST['emailLogin'];
